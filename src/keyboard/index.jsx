@@ -6,13 +6,13 @@ import Display from "./Components/Display/Display";
 const Keyboard = () => {
 
 
-const [html,setHtml] = useState(<span><span></span></span>);
+const [html,setHtml] = useState(<span id="main"><span></span></span>);
 
 return (
     <>
 
 <div>
-    <Display html={html}/>
+    <Display html={html} />
 </div>
 
 

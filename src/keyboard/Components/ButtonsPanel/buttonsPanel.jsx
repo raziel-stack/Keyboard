@@ -1,4 +1,5 @@
 import React, { useState, cloneElement, use } from "react";
+import './assets/style.css'
 
 const ButtonsPanel = ({ html, setHtml }) => {
 
@@ -32,7 +33,7 @@ const ButtonsPanel = ({ html, setHtml }) => {
 
         let childrenArray = React.Children.toArray(html.props.children);
         let lastChildren = childrenArray[childrenArray.length - 1];
-        let newLastChildren = lastChildren = cloneElement(lastChildren, {}, lastChildren.props.children, char);
+        let newLastChildren  = cloneElement(lastChildren, {}, lastChildren.props.children, char);
 
         const newChildren = [...childrenArray.slice(0, -1), newLastChildren];
 
@@ -117,19 +118,3 @@ const ButtonsPanel = ({ html, setHtml }) => {
 
 export default ButtonsPanel;
 
-// function addTextToElement(element, extraText) {
-//     return React.cloneElement(element, {}, element.props.children, extraText);
-// }
-
-// // שימוש:
-// const spanElement = <span>שלום</span>;
-// const newElement = addTextToElement(spanElement, ' עולם!');
-
-// // newElement יהיה:
-// // <span>שלום עולם!</span>
-
-// const anotherElement = addTextToElement(spanElement, <strong>!ברוך הבא</strong>);
-
-// const newChildren = [...childrenArray.slice(0, -1), newLastChild];
-
-// const newSpanElement = React.cloneElement(spanElement, {}, ...newChildren);
